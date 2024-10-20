@@ -1,6 +1,11 @@
 
 // Создаем новый WebSocket клиент
-const socket = new WebSocket('wss://echo.websocket.org');
+function connect() {
+    const input = document.getElementById('ServerIP');
+    const IP = input.value;
+    const socket = new WebSocket('wss://echo.websocket.org');
+}
+
 
 // Обработчик открытия соединения
 socket.addEventListener('open', function (event) {

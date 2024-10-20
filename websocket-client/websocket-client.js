@@ -1,6 +1,6 @@
 
 // Создаем новый WebSocket клиент
-const socket = new WebSocket('ws://your-websocket-server-url');
+const socket = new WebSocket('wss://echo.websocket.org');
 
 // Обработчик открытия соединения
 socket.addEventListener('open', function (event) {

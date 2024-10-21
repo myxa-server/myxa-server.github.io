@@ -7,15 +7,10 @@ const IP = input.value;
 console.log(IP); // Выводим значение IP в консоль
 
 // Используем прокси-сервер для обхода CORS
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-const targetUrl = 'wss://aternos.org/hermes/';
+const proxyUrl = 'http://localhost:5000/api/hermes/';
 
-// Создаем новый Socket.IO клиент и передаем заголовок с кукой
-socket = io(proxyUrl + targetUrl, {
-extraHeaders: {
-'Cookie': 'your_cookie_here' // Замените 'your_cookie_here' на вашу куку
-}
-});
+// Создаем новый Socket.IO клиент
+socket = io(proxyUrl);
 
 // Обработчик открытия соединения
 socket.on('connect', function() {
